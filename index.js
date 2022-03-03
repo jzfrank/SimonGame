@@ -2,6 +2,7 @@ var userClickPattern = [];
 var requiredPattern = [];
 var gameStart = false;
 var level = 0;
+var lastColor = "yellow";
 
 // add sounds to buttons
 $(".btn").on("click", (e) => {
@@ -44,7 +45,9 @@ function randomColor() {
 }
 
 function playsound(color) {
+  $("#sound-" + lastColor)[0].currentTime = 0;
   $("#sound-" + color)[0].play();
+  lastColor = color;
 }
 
 function arraysEqual(a, b) {
