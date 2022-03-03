@@ -6,8 +6,8 @@ var level = 0;
 // add sounds to buttons
 $(".btn").on("click", (e) => {
   var color = e.target.id;
-  pressAnimation(color);
   playsound(color);
+  pressAnimation(color);
   if (gameStart) {userClickPattern.push(color);}
   if (gameStart &&
     requiredPattern.length == userClickPattern.length) {
@@ -70,8 +70,8 @@ function nextLevel() {
   level += 1;
   $("#level-title").text("Level " + level);
   var color = randomColor();
-  pressAnimation(color);
   playsound(color);
+  pressAnimation(color);
   requiredPattern.push(color);
   userClickPattern = [];
 }
