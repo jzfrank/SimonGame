@@ -5,7 +5,7 @@ var level = 0;
 var lastColor = "yellow";
 
 // add sounds to buttons
-$(".btn").on("click", (e) => {
+$(".btn-user").on("click", (e) => {
   var color = e.target.id;
   pressAnimation(color);
   playsound(color);
@@ -25,8 +25,10 @@ $(".btn").on("click", (e) => {
 
 // start
 $(document).on("keypress", (e) => {
-  gameStart = true;
-  nextLevel();
+  if (!gameStart) {
+    gameStart = true;
+    nextLevel();
+  }
 })
 
 $("#level-title").on("click", (e) => {
