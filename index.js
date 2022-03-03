@@ -26,8 +26,15 @@ $(".btn").on("click", (e) => {
 $(document).on("keypress", (e) => {
   gameStart = true;
   nextLevel();
-  console.log("key is pressed, new game starts");
 })
+
+$("#level-title").on("click", (e) => {
+  if (!gameStart) {
+    gameStart = true;
+    nextLevel();
+  }
+})
+
 
 
 // auxilliary functions
@@ -70,10 +77,11 @@ function nextLevel() {
 }
 
 function gameOver() {
-  $("#level-title").text("Game Over, press anykey to restart");
+  $("#level-title").text("Game Over, press here to restart");
   var audio = new Audio("sounds/wrong.mp3");
   audio.play();
   level = 0;
+  gameStart = false;
   userClickPattern = [];
   requiredPattern = [];
 }
