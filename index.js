@@ -44,8 +44,7 @@ function randomColor() {
 }
 
 function playsound(color) {
-  var audio = new Audio("sounds/" + color + ".mp3");
-  audio.play();
+  $("#sound-" + color)[0].play();
 }
 
 function arraysEqual(a, b) {
@@ -78,8 +77,7 @@ function nextLevel() {
 
 function gameOver() {
   $("#level-title").text("Game Over, press here to restart");
-  var audio = new Audio("sounds/wrong.mp3");
-  audio.play();
+  playsound("wrong");
   level = 0;
   gameStart = false;
   userClickPattern = [];
