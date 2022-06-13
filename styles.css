@@ -7,7 +7,7 @@ body {
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
-  margin:  5%;
+  margin: 5%;
   margin-left: 10%;
   margin-right: 10%;
   padding-left: 10%;
@@ -61,6 +61,10 @@ body {
   background-color: grey;
 }
 
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
+}
+
 @media screen and (max-width: 900px) {
   body {
     padding: 10vh;
@@ -75,6 +79,7 @@ body {
   body {
     margin: 100vh;
   }
+
   #level-title {
     font-size: 1rem;
   }
